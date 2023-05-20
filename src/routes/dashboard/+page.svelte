@@ -1,11 +1,11 @@
 <script>
   // @ts-nocheck
   import Header from "$lib/Header.svelte";
-  import WelcomeNav from "$lib/WelcomeNav.svelte";
+  import MainNav from "$lib/MainNav.svelte";
 </script>
 
 <Header>
-  <WelcomeNav />
+  <MainNav />
 </Header>
 
 <div class="columns is-vcentered content">
@@ -16,7 +16,7 @@
     -->
   </div>
   <div class="column">
-    <h1 class="title">PlaceMark</h1>
+    <h1 class="title">Dashboard</h1>
     <p>Oh, the places you'll go!</p>
   </div>
 </div>
