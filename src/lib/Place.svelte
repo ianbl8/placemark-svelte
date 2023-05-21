@@ -2,10 +2,11 @@
   // @ts-nocheck
   import { onMount } from "svelte";
   import { placemarkService } from "../services/placemark-services.js";
+  export let id;
   
-  let places = [];
+  let place = [];
   onMount(async () => {
-    places = await placemarkService.getPlaces();
+    place = await placemarkService.getPlaceById(id);
   })
 </script>
 
@@ -18,13 +19,11 @@
     <th>Delete</th>
   </thead>
   <tbody>
-    {#each places as place}
-      <tr>
-        <td><a href="./places/{place._id}">{place.placename}</a></td>
-        <td><a href="./categories/{place.categoryid}">{place.categorytitle}</td>
-        <td>[Edit]</td>
-        <td>[Delete]</td>
-      </tr>
-    {/each}
+    <tr>
+      <td>{place.placename}</td>
+      <td><a href="../categories/{place.categoryid}">{place.categorytitle}</td>
+      <td>[Edit]</td>
+      <td>[Delete]</td>
+    </tr>
   </tbody>
 </table>

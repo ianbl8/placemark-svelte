@@ -50,9 +50,27 @@ export const placemarkService = {
 		}
 	},
 
+	async getCategoryById(id) {
+		try {
+			const response = await axios.get(this.baseUrl + "/api/categories/" + id);
+			return response.data;
+		} catch (error) {
+			return [];
+		}
+	},
+
 	async getPlaces() {
 		try {
 			const response = await axios.get(this.baseUrl + "/api/places");
+			return response.data;
+		} catch (error) {
+			return [];
+		}
+	},
+
+	async getPlaceById(id) {
+		try {
+			const response = await axios.get(this.baseUrl + "/api/places/" + id);
 			return response.data;
 		} catch (error) {
 			return [];

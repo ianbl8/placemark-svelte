@@ -19,7 +19,7 @@
   <tbody>
     {#each categories as category}
       <tr>
-        <td>{category.title}</td>
+        <td><a href="./categories/{category._id}">{category.title}</a></td>
         <td>[Edit]</td>
         <td>[Delete]</td>
       </tr>
