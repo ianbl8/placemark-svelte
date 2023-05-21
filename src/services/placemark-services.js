@@ -50,4 +50,13 @@ export const placemarkService = {
 		}
 	},
 
+	async getPlaces() {
+		try {
+			const response = await axios.get(this.baseUrl + "/api/places");
+			return response.data;
+		} catch (error) {
+			return [];
+		}
+	},
+
 };
