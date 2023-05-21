@@ -39,5 +39,15 @@ export const placemarkService = {
 		} catch (error) {
 			return false;
 		}
-	}
+	},
+
+	async getCategories() {
+		try {
+			const response = await axios.get(this.baseUrl + "/api/categories");
+			return response.data;
+		} catch (error) {
+			return [];
+		}
+	},
+
 };

@@ -2,6 +2,7 @@
   // @ts-nocheck
   import Header from "$lib/Header.svelte";
   import MainNav from "$lib/MainNav.svelte";
+  import Categories from "$lib/Categories.svelte";
 </script>
 
 <Header>
@@ -16,7 +17,6 @@
     -->
   </div>
   <div class="column">
-    <h1 class="title">Dashboard</h1>
-    <p>Oh, the places you'll go!</p>
+    <Categories />
   </div>
 </div>
