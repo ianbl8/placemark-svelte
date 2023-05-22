@@ -48,6 +48,18 @@
         <input bind:value={newPlacename} class="input" type="text" placeholder="Place Name" name="placename">
       </div>
       <div class="field">
+        <label class="label" for="categorytitle">Category</label>
+        <select bind:value={newCategorytitle} class="select" id="selection" name="categorytitle">
+            {#each categories as category}
+              <option>{category.title}</option>
+            {/each}
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
         <label class="label" for="latitude">Latitude (° +N/-S)</label>
         <input bind:value={newLatitude} class="input" type="number" step=".000001" placeholder="53.349804" name="latitude">
       </div>
@@ -56,14 +68,6 @@
         <input bind:value={newLongitude} class="input" type="number" step=".000001" placeholder="-6.260310" name="longitude">
       </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label" for="categorytitle">Category</label><br>
-    <select bind:value={newCategorytitle} class="select" id="selection" name="categorytitle">
-        {#each categories as category}
-          <option>{category.title}</option>
-        {/each}
-    </select>
   </div>
   <div class="field is-horizontal">
     <div class="field-body">
