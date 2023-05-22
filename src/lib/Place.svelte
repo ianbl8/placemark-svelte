@@ -14,15 +14,14 @@
 <table class="table is-fullwidth">
   <thead>
     <th>Place</th>
+    <th></th>
     <th>Category</th>
-    <th>Edit</th>
     <th>Delete</th>
   </thead>
   <tbody>
     <tr>
-      <td>{place.placename}</td>
+      <td colspan="2">{place.placename}</td>
       <td><a href="../categories/{place.categoryid}">{place.categorytitle}</td>
-      <td>[Edit]</td>
       <td>[Delete]</td>
     </tr>
     <tr>

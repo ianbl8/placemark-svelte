@@ -14,13 +14,12 @@
 <table class="table is-fullwidth">
   <thead>
     <th>Category</th>
-    <th>Edit</th>
+    <th></th>
     <th>Delete</th>
   </thead>
   <tbody>
     <tr>
-      <td>{category.title}</td>
-      <td>[Edit]</td>
+      <td colspan="2">{category.title}</td>
       <td>[Delete]</td>
     </tr>
   </tbody>

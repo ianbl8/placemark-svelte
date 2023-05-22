@@ -13,14 +13,13 @@
 <table class="table is-fullwidth">
   <thead>
     <th>Category</th>
-    <th>Edit</th>
+    <th></th>
     <th>Delete</th>
   </thead>
   <tbody>
     {#each categories as category}
       <tr>
-        <td><a href="./categories/{category._id}">{category.title}</a></td>
-        <td>[Edit]</td>
+        <td colspan="2"><a href="./categories/{category._id}">{category.title}</a></td>
         <td>[Delete]</td>
       </tr>
     {/each}

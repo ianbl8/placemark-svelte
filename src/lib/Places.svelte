@@ -13,16 +13,15 @@
 <table class="table is-fullwidth">
   <thead>
     <th>Place</th>
+    <th></th>
     <th>Category</th>
-    <th>Edit</th>
     <th>Delete</th>
   </thead>
   <tbody>
     {#each places as place}
       <tr>
-        <td><a href="./places/{place._id}">{place.placename}</a></td>
+        <td colspan="2"><a href="./places/{place._id}">{place.placename}</a></td>
         <td><a href="./categories/{place.categoryid}">{place.categorytitle}</td>
-        <td>[Edit]</td>
         <td>[Delete]</td>
       </tr>
     {/each}
