@@ -95,6 +95,18 @@ export const placemarkService = {
 		}
 	},
 
+	async editCategory(category, newCategory) {
+		try {
+			console.log(category._id);
+			console.log(newCategory);
+			const response = await axios.post(this.baseUrl + "/api/categories/" + category._id, newCategory);
+			latestCategory.set(category);
+			return response.status == 201;
+		} catch (error) {
+			return false;
+		}
+	},
+
 	async getPlaces() {
 		try {
 			const response = await axios.get(this.baseUrl + "/api/places");

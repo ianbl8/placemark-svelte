@@ -6,6 +6,7 @@
   import Header from "$lib/Header.svelte";
   import MainNav from "$lib/MainNav.svelte";
   import Category from "$lib/Category.svelte";
+  import CategoryEdit from "$lib/CategoryEdit.svelte";
   import CategoryMap from "$lib/CategoryMap.svelte";
 </script>
 
@@ -19,5 +20,6 @@
   </div>
   <div class="column">
     <Category id="{id}" />
+    <CategoryEdit id="{id}" />
   </div>
 </div>
