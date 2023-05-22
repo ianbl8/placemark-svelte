@@ -107,6 +107,16 @@ export const placemarkService = {
 		}
 	},
 
+	async deleteCategory(id) {
+		try {
+			const response = await axios.delete(this.baseUrl + "/api/categories/" + id);
+			latestCategory.set(null);
+			return response.data;
+		} catch (error) {
+			return false;
+		}
+	},
+
 	async getPlaces() {
 		try {
 			const response = await axios.get(this.baseUrl + "/api/places");
@@ -143,6 +153,16 @@ export const placemarkService = {
 			const response = await axios.post(this.baseUrl + "/api/places/" + place._id, newPlace);
 			latestPlace.set(newPlace);
 			return response.status == 201;
+		} catch (error) {
+			return false;
+		}
+	},
+
+	async deletePlace(id) {
+		try {
+			const response = await axios.delete(this.baseUrl + "/api/places/" + id);
+			latestPlace.set(null);
+			return response.data;
 		} catch (error) {
 			return false;
 		}

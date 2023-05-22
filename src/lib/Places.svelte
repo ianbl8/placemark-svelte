@@ -15,14 +15,12 @@
     <th>Place</th>
     <th></th>
     <th>Category</th>
-    <th>Delete</th>
   </thead>
   <tbody>
     {#each places as place}
       <tr>
         <td colspan="2"><a href="./places/{place._id}">{place.placename}</a></td>
         <td><a href="./categories/{place.categoryid}">{place.categorytitle}</td>
-        <td>[Delete]</td>
       </tr>
     {/each}
   </tbody>
