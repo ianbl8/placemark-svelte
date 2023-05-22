@@ -124,4 +124,16 @@ export const placemarkService = {
 		}
 	},
 
+	async editPlace(place, newPlace) {
+		try {
+			console.log(place._id);
+			console.log(newPlace);
+			const response = await axios.post(this.baseUrl + "/api/places/" + place._id, newPlace);
+			latestPlace.set(newPlace);
+			return response.status == 201;
+		} catch (error) {
+			return false;
+		}
+	},
+
 };
