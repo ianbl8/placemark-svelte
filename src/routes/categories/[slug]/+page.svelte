@@ -6,6 +6,7 @@
   import Header from "$lib/Header.svelte";
   import MainNav from "$lib/MainNav.svelte";
   import Category from "$lib/Category.svelte";
+  import CategoryMap from "$lib/CategoryMap.svelte";
 </script>
 
 <Header>
@@ -14,10 +15,7 @@
 
 <div class="columns is-vcentered content">
   <div class="column has-text-centered">
-    <p>Image goes here</p>
-    <!--
-    <img src="" width="300" alt="" />
-    -->
+    <CategoryMap />
   </div>
   <div class="column">
     <Category id="{id}" />

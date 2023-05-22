@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import axios from "axios";
+import { latestCategory, latestPlace, user } from "../stores";
 
 export const placemarkService = {
 	baseUrl: "http://localhost:3000",
@@ -13,6 +14,14 @@ export const placemarkService = {
 			});
 			axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
 			if (response.data.success) {
+				user.set({
+					email: email,
+					token: response.data.token,
+				});
+				localStorage.placemark = JSON.stringify({
+					email: email,
+					token: response.data.token,
+				});
 				return true;
 			}
 			return false;
@@ -23,7 +32,24 @@ export const placemarkService = {
 	},
 
 	async logout() {
+		user.set({
+			email: "",
+			token: "",
+		});
+		localStorage.removeItem("placemark");
 		axios.defaults.headers.common["Authorization"] = "";
+	},
+
+	reload() {
+		const placemarkCredentials = localStorage.placemark;
+		if (placemarkCredentials) {
+			const savedUser = JSON.parse(placemarkCredentials);
+			user.set({
+				email: savedUser.email,
+				token: savedUser.token,
+			});
+			axios.defaults.headers.common["Authorization"] = "Bearer " + savedUser.token;
+		}
 	},
 
 	async signup(firstName, lastName, email, password) {
@@ -59,6 +85,16 @@ export const placemarkService = {
 		}
 	},
 
+	async addCategory(category) {
+		try {
+			const response = await axios.post(this.baseUrl + "/api/categories", category);
+			latestCategory.set(category);
+			return response.status == 201;
+		} catch (error) {
+			return false;
+		}
+	},
+
 	async getPlaces() {
 		try {
 			const response = await axios.get(this.baseUrl + "/api/places");
@@ -74,6 +110,17 @@ export const placemarkService = {
 			return response.data;
 		} catch (error) {
 			return [];
+		}
+	},
+
+	async addPlace(categoryId, place) {
+		try {
+			console.log(place);
+			const response = await axios.post(this.baseUrl + "/api/categories/" + categoryId + "/places", place);
+			latestPlace.set(place);
+			return response.status == 201;
+		} catch (error) {
+			return false;
 		}
 	},
 

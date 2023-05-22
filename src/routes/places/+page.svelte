@@ -3,6 +3,8 @@
   import Header from "$lib/Header.svelte";
   import MainNav from "$lib/MainNav.svelte";
   import Places from "$lib/Places.svelte";
+  import PlacesAdd from "$lib/PlacesAdd.svelte";
+  import PlacesMap from "$lib/PlacesMap.svelte";
 </script>
 
 <Header>
@@ -11,12 +13,10 @@
 
 <div class="columns is-vcentered content">
   <div class="column has-text-centered">
-    <p>Image goes here</p>
-    <!--
-    <img src="" width="300" alt="" />
-    -->
+    <PlacesMap />
   </div>
   <div class="column">
     <Places />
+    <PlacesAdd />
   </div>
 </div>
