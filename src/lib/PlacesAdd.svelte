@@ -3,7 +3,6 @@
 
   import { onMount } from "svelte";
   import { placemarkService } from "../services/placemark-services";
-  import { user } from "../stores";
 
   let newPlacename = "";
   let newLatitude = 0;
@@ -61,18 +60,9 @@
   <div class="field">
     <label class="label" for="categorytitle">Category</label><br>
     <select bind:value={newCategorytitle} class="select" id="selection" name="categorytitle">
-      <!--
-      <optgroup label="Current category">
-        <option value="{category.title}" selected>{category.title}}</option>
-      </optgroup>
-      <optgroup label="All categories">
-      -->
         {#each categories as category}
           <option>{category.title}</option>
         {/each}
-      <!--
-      </optgroup>
-      -->
     </select>
   </div>
   <div class="field is-horizontal">
