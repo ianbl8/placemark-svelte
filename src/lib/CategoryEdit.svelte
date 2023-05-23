@@ -26,7 +26,7 @@
         message = "Unable to edit this category.";
         return;
       }
-      message = `Category ${newCategory.title} edited.`;
+      location.reload();
     } else {
       message = "Please enter the category details.";
     }

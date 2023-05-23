@@ -14,7 +14,7 @@
         message = "Unable to add this category.";
         return;
       };
-      message = `Category ${category.title} added.`;
+      location.reload();
     } else {
       message = "Please enter the category name.";
     };

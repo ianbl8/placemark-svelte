@@ -33,7 +33,7 @@
         message = "Unable to add this place.";
         return;
       }
-      message = `Place ${place.placename} added.`;
+      location.reload();
     } else {
       message = "Please enter the place details.";
     }

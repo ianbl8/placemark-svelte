@@ -41,7 +41,7 @@
         message = "Unable to edit this place.";
         return;
       }
-      message = `Place ${newPlace.placename} edited.`;
+      location.reload();
     } else {
       message = "Please enter the place details.";
     }
@@ -56,6 +56,23 @@
         <input bind:value={placename} class="input" type="text" placeholder="Place Name" name="placename">
       </div>
       <div class="field">
+        <label class="label" for="categorytitle">Category</label>
+        <select bind:value={categorytitle} class="select" id="selection" name="categorytitle">
+          <optgroup label="Current category">
+            <option selected>{categorytitle}</option>
+          </optgroup>
+          <optgroup label="All categories">
+            {#each categories as category}
+              <option>{category.title}</option>
+            {/each}
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
         <label class="label" for="latitude">Latitude (° +N/-S)</label>
         <input bind:value={latitude} class="input" type="number" step=".000001" placeholder="53.349804" name="latitude">
       </div>
@@ -64,19 +81,6 @@
         <input bind:value={longitude} class="input" type="number" step=".000001" placeholder="-6.260310" name="longitude">
       </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label" for="categorytitle">Category</label><br>
-    <select bind:value={categorytitle} class="select" id="selection" name="categorytitle">
-      <optgroup label="Current category">
-        <option selected>{categorytitle}</option>
-      </optgroup>
-      <optgroup label="All categories">
-        {#each categories as category}
-          <option>{category.title}</option>
-        {/each}
-      </optgroup>
-    </select>
   </div>
   <div class="field is-horizontal">
     <div class="field-body">

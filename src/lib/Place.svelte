@@ -12,7 +12,7 @@
 
   async function deletePlace(id) {
     await placemarkService.deletePlace(id);
-    goto("/places");
+    history.back();
   };
 </script>
 

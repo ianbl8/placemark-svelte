@@ -13,7 +13,9 @@
     places = category.places;
     if (places.length == 0) {
       categoryEmpty = true;
-    }
+    };
+    console.log(category);
+    console.log(places);
   });
 
   async function deleteCategory(id) {
@@ -51,7 +53,7 @@
   <tbody>
     {#each places as place}
       <tr>
-        <td colspan="2"><a href="./places/{place._id}">{place.placename}</a></td>
+        <td colspan="2"><a href="../places/{place._id}">{place.placename}</a></td>
         <td>{place.latitude}</td>
         <td>{place.longitude}</td>
       </tr>
