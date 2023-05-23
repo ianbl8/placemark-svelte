@@ -18,7 +18,7 @@
   });
 
   async function addPlace() {
-    if (newPlacename && newCategorytitle) {
+    if (newPlacename && newCategorytitle && newLatitude && newLongitude && newDescription) {
       newCategoryid = categories.find((category) => category.title == newCategorytitle)._id;
       const place = {
         placename: newPlacename,
@@ -35,7 +35,7 @@
       }
       location.reload();
     } else {
-      message = "Please enter the place details.";
+      message = "Please enter the full place details, including coordinates and description, and select a category.";
     }
   }
 </script>
