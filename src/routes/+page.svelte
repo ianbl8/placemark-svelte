@@ -10,13 +10,8 @@
 
 <div class="columns is-vcentered content">
   <div class="column has-text-centered">
-    <p>Image goes here</p>
-    <!--
-    <img src="" width="300" alt="" />
-    -->
-  </div>
-  <div class="column">
     <h1 class="title">PlaceMark</h1>
-    <p>Oh, the places you'll go!</p>
+    <hr>
+    <h2 class="subtitle">Please sign up or log in</h2>
   </div>
 </div>
