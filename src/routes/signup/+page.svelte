@@ -16,10 +16,4 @@
       <SignupForm />
     </div>
   </div>
-  <div class="column has-text-centered">
-    <h1 class="subtitle">Sign up picture goes here</h1>
-    <!--
-    <img src="" width="300" alt="" />
-    -->
-  </div>
 </div>
