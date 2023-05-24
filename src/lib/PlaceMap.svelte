@@ -1,6 +1,6 @@
 <script>
   // @ts-nocheck
-  import "leaflet/dist/leaflet.css";
+  // import "leaflet/dist/leaflet.css";
   import { LeafletMap } from "../services/leaflet-map";
   import { placemarkService } from "../services/placemark-services.js";
   import { onMount } from "svelte";
