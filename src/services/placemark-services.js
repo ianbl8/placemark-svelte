@@ -4,7 +4,7 @@ import axios from "axios";
 import { latestCategory, latestPlace, user } from "../stores";
 
 export const placemarkService = {
-	baseUrl: "http://localhost:3000",
+	baseUrl: "https://placemark-hapi-ma2x.onrender.com",
 
 	async login(email, password) {
 		try {
