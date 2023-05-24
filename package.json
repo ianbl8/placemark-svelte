@@ -1,6 +1,6 @@
 {
 	"name": "placemark-svelte",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -30,6 +30,7 @@
 	"type": "module",
 	"dependencies": {
 		"axios": "^1.4.0",
+		"dotenv": "^16.0.3",
 		"leaflet": "^1.9.4",
 		"svelte-frappe-charts": "^1.10.0"
 	}

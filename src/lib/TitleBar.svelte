@@ -15,6 +15,6 @@
   </div>
   <div class="column">
     <i style="font-size: 48px; color: LightSeaGreen;" class="fas fa-map-marked-alt"></i>
-    <div class="is-size-7">PlaceMark 0.4.0</div>
+    <div class="is-size-7">PlaceMark 0.5.0</div>
   </div>
 </div>
