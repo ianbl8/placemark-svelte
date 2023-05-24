@@ -3,6 +3,7 @@
   import { onMount } from "svelte"
   import { goto } from "$app/navigation";
   import { placemarkService } from "../services/placemark-services.js";
+  import PlaceMap from "./PlaceMap.svelte";
   export let id;
   
   let categoryEmpty = false;
@@ -24,7 +25,7 @@
   };
 </script>
 
-<h1 class="title is-2"><i class="fas fa-layer-group" style="color:rgb(153, 196, 74)" /> Category: {category.title}</h1>
+<h1 class="title is-2"><i class="fas fa-layer-group" style="color:rgb(153, 196, 74)" /> {category.title}</h1>
 <table class="table is-fullwidth">
   <thead>
     <th>Category</th>
@@ -56,6 +57,11 @@
         <td colspan="2"><a href="../places/{place._id}">{place.placename}</a></td>
         <td>{place.latitude}</td>
         <td>{place.longitude}</td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <PlaceMap id="{place._id}" />
+        </td>
       </tr>
     {/each}
   </tbody>

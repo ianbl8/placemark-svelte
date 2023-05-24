@@ -7,6 +7,7 @@
   import MainNav from "$lib/MainNav.svelte";
   import Place from "$lib/Place.svelte";
   import PlaceEdit from "$lib/PlaceEdit.svelte";
+  import PlaceImages from "$lib/PlaceImages.svelte";
   import PlaceMap from "$lib/PlaceMap.svelte";
 </script>
 
@@ -14,12 +15,13 @@
   <MainNav />
 </Header>
 
-<div class="columns is-vcentered content">
+<div class="columns content">
   <div class="column has-text-centered">
-    <PlaceMap />
+    <PlaceImages id="{id}"/>
   </div>
   <div class="column">
     <Place id="{id}" />
+    <PlaceMap id="{id}"/>
     <PlaceEdit id="{id}" />
   </div>
 </div>

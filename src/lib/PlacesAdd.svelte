@@ -40,6 +40,8 @@
   }
 </script>
 
+<hr>
+<h2 class="subtitle">Add a place</h2>
 <form on:submit|preventDefault={addPlace}>
   <div class="field is-horizontal">
     <div class="field-body">

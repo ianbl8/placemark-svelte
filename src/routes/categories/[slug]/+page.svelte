@@ -16,7 +16,7 @@
 
 <div class="columns is-vcentered content">
   <div class="column has-text-centered">
-    <CategoryMap />
+    <CategoryMap id="{id}"/>
   </div>
   <div class="column">
     <Category id="{id}" />

@@ -21,6 +21,8 @@
   }
 </script>
 
+<hr>
+<h2 class="subtitle">Add a category</h2>
 <form on:submit|preventDefault={addCategory}>
   <div class="field">
     <label class="label" for="title">New category</label>

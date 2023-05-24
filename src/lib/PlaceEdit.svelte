@@ -48,6 +48,8 @@
   }
 </script>
 
+<hr>
+<h2 class="subtitle">Edit details</h2>
 <form on:submit|preventDefault={editPlace}>
   <div class="field is-horizontal">
     <div class="field-body">
